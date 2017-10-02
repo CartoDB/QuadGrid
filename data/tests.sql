@@ -5,17 +5,17 @@ with a as (
 SELECT qg.* FROM a, CDB_QuadGrid(a.points, 25, 1000)  qg;
 
 with a as (
-  SELECT array_agg(the_geom) as points fROM bancos_madrid
+  SELECT array_agg(the_geom) as points fROM benches
   )
 SELECT qg.* FROM a, CDB_QuadGrid(a.points, 25)   qg;
 
 with a as (
-  SELECT array_agg(the_geom) as points fROM bancos_madrid where cartodb_id % 3= 0 limit 20000
+  SELECT array_agg(the_geom) as points fROM benches where cartodb_id % 3= 0 limit 20000
   )
 SELECT qg.* FROM a, CDB_QuadGrid(a.points, 25)  qg;
 
 with a as (
-  SELECT array_agg(the_geom) as points fROM farolas_complutense
+  SELECT array_agg(the_geom) as points fROM streetlamps
   )
 SELECT qg.* FROM a, CDB_QuadGrid(a.points, 25)  qg;
 
