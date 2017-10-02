@@ -3,7 +3,7 @@ Quadgrid for [GDPR](http://www.eugdpr.org/) compliance which will be compulsory 
 
 As the telco data has a lot of concerns in terms of privacy, an irregular grid where the size of the cell is the minimal one that complies with the limitations (like a minimum number of events per cell as threshold) will provide the best resolution across the area of study being compliant with the restriction.
 
-In this test, can be noted that there are cells with `occurrences > 4 * threshold`, and that's because the size of that cell is just one step above resolution limit so it can't be split again regardless the high density.
+The idea is to provide an irregular grid where each cell has the maximal LoD (up to a given resolution) while being compliant with a restriction (occurences per cell above a given threshold). This **QuadGrid** is the result of aplying [quadtree](https://en.wikipedia.org/wiki/Quadtree) schema witha a different restriction.
 
 ![image](https://user-images.githubusercontent.com/9017165/31018568-ecf6c8e8-a52c-11e7-95b7-b358aff06839.png)
 
@@ -11,7 +11,7 @@ Link to test:  https://team.carto.com/u/abel/builder/b1275d91-bc38-4d49-a1b2-6b5
 
 Current version (SQL) is **O(N³)**
 
-Some benchmarks (locan OnPrem 2.0)
+Some benchmarks (local OnPrem 2.0, SQL versions)
 
 |  version | streetlamps (7K rows)   | benches (20K rows)   |   benches (65K rows)   |  flights (100K rows worldwide) |
 |---|---|---|---|---|
