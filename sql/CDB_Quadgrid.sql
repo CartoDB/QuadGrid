@@ -113,7 +113,7 @@ BEGIN
         -- add the parent to results and continue
         IF checker = 0 THEN
             vs[i] := 2;
-        -- else, drop the parent and add the children
+        -- else, drop the parent and add the valid children
         -- to the list of potential results
         ELSE
             vs[i] := 0;
