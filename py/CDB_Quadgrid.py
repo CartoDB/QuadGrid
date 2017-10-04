@@ -60,6 +60,12 @@ points = points.to_crs({"init": "epsg:3857"})
 
 # Let's start with the envelope of all the points and split from there
 initial_cell = points.unary_union.envelope
+# Let's make it a square
+initial_cell_centroid = initial_cell.centroid
+initial_cell_vertices_coords = initial_cell.exterior.coords.xy
+one_vertex = Point((initial_cell_vertices_coords[0][0], initial_cell_vertices_coords[1][0]))
+initial_cell = initial_cell_centroid.buffer(initial_cell_centroid.distance(one_vertex)).envelope
+
 grid = split_cell(initial_cell, points)
 
 grid.plot()
