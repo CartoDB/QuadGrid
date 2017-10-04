@@ -9,12 +9,12 @@ The idea is to provide an irregular grid where each cell has the maximal LoD (up
 
 Link to test:  https://team.carto.com/u/abel/builder/b1275d91-bc38-4d49-a1b2-6b5166856021/embed
 
-Current version (SQL) is **O(N³)**
+Current version (SQL) is below **O(N³)**
 
-Some benchmarks (local OnPrem 2.0, SQL versions)
+Some benchmarks (local OnPrem 2.0, timeout 5min, SQL versions)
 
-|  version | streetlamps (7K rows)   | benches (20K rows)   |   benches (65K rows)   |  flights (100K rows worldwide) |
-|---|---|---|---|---|
-| 1 | 211 ms  | 44 s  | >5min (timeout)  |  >5min (timeout)  |
-| 2  | 59 ms | 8 s | 75.3 s  | 4:14 min  |
-| 3  | 50 ms | 7 s | 68.3 s  |  4:10 min  |
+| ersion | streetlamps (7K) | benches (20K) | benches (65K) | flights (100K, WW) | trees (150K) |
+|---|---|---|---|---|---|
+| 1 | 211 ms  | 44 s  | timeout  |  timeout  |  timeout  |
+| 2  | 59 ms | 8 s | 75.3 s  | 4:14 min  |  timeout  |
+| 3  | 50 ms | 7 s | 68.3 s  |  3:43 min  | 4:59 min |
