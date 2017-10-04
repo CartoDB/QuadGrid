@@ -1,0 +1,4 @@
+[data]
+threshold = 25
+resolution = 1
+dataset = data/streetlamps.csv
