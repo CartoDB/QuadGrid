@@ -1,6 +1,11 @@
 -- ordered by number of points, descending
+
 with a as (
-  SELECT array_agg(the_geom) as points fROM flights where cartodb_id % 2 = 0 limit 150000
+  SELECT array_agg(the_geom) as points fROM arbrat
+SELECT qg.* FROM a, CDB_QuadGrid(a.points, 25)  qg;
+
+with a as (
+  SELECT array_agg(the_geom) as points fROM flights where cartodb_id % 3 = 0 limit 100000
   )
 SELECT qg.* FROM a, CDB_QuadGrid(a.points, 25, 1000)  qg;
 

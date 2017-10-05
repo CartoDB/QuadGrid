@@ -84,7 +84,7 @@ BEGIN
         -- build the new generation
         _children as(
             SELECT
-                ST_Envelope(ST_MakeLine(center, _nodes.node)) as geom
+                ST_Envelope(ST_Collect(center, _nodes.node)) as geom
             FROM unnest(vertex) as _nodes(node)
         ),
         -- evaluate the population and validity of children cells
