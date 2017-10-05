@@ -13,8 +13,9 @@ Current version (SQL) is below **O(N³)**
 
 Some benchmarks (local OnPrem 2.0, timeout 5min, SQL versions)
 
-| ersion | streetlamps (7K) | benches (20K) | benches (65K) | flights (100K, WW) | trees (150K) |
-|---|---|---|---|---|---|
-| 1 | 211 ms  | 44 s  | timeout  |  timeout  |  timeout  |
-| 2  | 59 ms | 8 s | 75.3 s  | 4:14 min  |  timeout  |
-| 3  | 50 ms | 7 s | 68.3 s  |  3:43 min  | 4:59 min |
+| version | streetlamps (7K) | benches (20K) | benches (65K) | flights (100K, WW) | trees (150K) | flights (400K, WW) |
+|---|---|---|---|---|---|---|
+| 1 | 211 ms  | 44 s  | timeout  |  timeout  |  timeout  |  timeout  |
+| 2  | 59 ms | 8 s | 75.3 s  | 4:14 min  |  timeout  |  timeout  |
+| 3  | 50 ms | 7 s | 68.3 s  | 3:43 min  | 4:59 min |  timeout  |
+| R2  | 19 ms |  | 1.4 s  |     |  4 s |  4:15 min  |
