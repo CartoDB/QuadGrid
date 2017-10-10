@@ -9,7 +9,7 @@ The idea is to provide an irregular grid where each cell has the maximal LoD (up
 
 Link to test:  https://team.carto.com/u/abel/builder/b1275d91-bc38-4d49-a1b2-6b5166856021/embed
 
-Current version (SQL) is below **O(N³)**
+Current version (SQL) is below **O(N³)**, recursive version (SQL) is much faster: **O(N)**
 
 Some benchmarks (local OnPrem 2.0, timeout 5min, SQL versions)
 
