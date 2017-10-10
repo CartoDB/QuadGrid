@@ -99,6 +99,7 @@ FROM sample
 
 -- raw query
 WITH
+-- build all the possible cells
 RECURSIVE t(pid, id, x, y, z, dow, h, e) AS (
     SELECT
         '','0',0,0,0, dow, h, count(*) FROM sample_dowh group by dow, h
@@ -109,7 +110,9 @@ RECURSIVE t(pid, id, x, y, z, dow, h, e) AS (
     FROM t, (VALUES (0, 0), (0, 1), (1, 1), (1, 0)) as c(xx, yy)
     WHERE e >= 25 AND z < 25
 ),
+-- filter the non compliant cells
 potential as(SELECT pid, id, x, y, z, dow, h, e FROM t WHERE e >= 25),
+-- check the cells with children
 cleaned as(
     SELECT x, y, z, dow, h, e, coalesce(c, 0) as c
     FROM
@@ -118,6 +121,7 @@ cleaned as(
         lateral(SELECT count(1) as c FROM potential where pid = p1.id) p2
     ON 1=1
 )
+-- filter the cells with children and return geometries instead of tile coordinates
 SELECT
     dow, h,
     ST_transform(CDB_XYZ_Extent(x, y, z), 3857) as the_geom,
