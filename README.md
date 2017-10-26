@@ -19,3 +19,4 @@ Some benchmarks (local OnPrem 2.0, timeout 5min, SQL versions)
 | 2  | 59 ms | 8 s | 75.3 s  |  |4:14 min  |  timeout  |  timeout  |
 | 3  | 50 ms | 7 s | 68.3 s  | 1:47 min |3:43 min  | 4:59 min |  timeout  |
 | R2  | 19 ms |  | 1.4 s  | 2.11 s | |  4 s |  4:15 min  |
+| R2 + cluster  | 60 ms |  | 2.6 s  | 4 s | |  9.25 s |  48 s  |
