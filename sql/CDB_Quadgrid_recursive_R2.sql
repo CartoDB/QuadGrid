@@ -4,7 +4,23 @@ CREATE OR REPLACE FUNCTION CDB_QuadGrid_R2(
     IN resolution integer DEFAULT 1
     )
 RETURNS TABLE(the_geom geometry, occurrences bigint)  AS $$
+DECLARE
+    wm_column text;
 BEGIN
+
+    -- retrieve actual name of webmercator index
+    -- because the name of it is related to the original name of the table
+    QUERY EXECUTE 'SELECT indexname FROM pg_indexes WHERE tablename = '||tablename||' and indexname like '||quote_literal('%_the_geom_webmercator_idx')  INTO wm_column ;
+
+    -- sort the table by the_geom_webmercator
+    -- this improves performance 15% - 25%
+    -- depending on how the data is spread
+    -- the time needed for clustering is
+    QUERY EXECUTE 'CLUSTER '||tablename||' USING ' || wm_column;
+
+    -- vaccum the table for map visibility results in no improvement
+    -- https://www.postgresql.org/docs/current/static/routine-vacuuming.html#VACUUM-FOR-VISIBILITY-MAP
+
     RETURN QUERY EXECUTE
    'WITH
     RECURSIVE t(pid, id, x, y, z, e) AS (
