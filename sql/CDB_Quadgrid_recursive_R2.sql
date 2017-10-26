@@ -10,7 +10,7 @@ BEGIN
 
     -- retrieve actual name of webmercator index
     -- because the name of it is related to the original name of the table
-    EXECUTE 'SELECT indexname FROM pg_indexes WHERE tablename = '||tablename||' and indexname like '||quote_literal('%_the_geom_webmercator_idx')  INTO wm_column ;
+    EXECUTE 'SELECT indexname FROM pg_indexes WHERE tablename = '||quote_literal(tablename)||' and indexname like '||quote_literal('%_the_geom_webmercator_idx')  INTO wm_column ;
 
     -- sort the table by the_geom_webmercator
     -- this improves performance 15% - 25%
@@ -48,7 +48,7 @@ BEGIN
     FROM cleaned
     WHERE c = 0;';
 END;
-$$ language plpgsql IMMUTABLE;
+$$ language plpgsql VOLATILE;
 
 
 -- //// support functions /// https://github.com/CartoDB/cartodb-postgresql/blob/master/scripts-available/CDB_XYZ.sql ////////////////////////////
