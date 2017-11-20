@@ -1,7 +1,6 @@
 # QuadGrid
 
-
-![image](https://user-images.githubusercontent.com/9017165/31018568-ecf6c8e8-a52c-11e7-95b7-b358aff06839.png)
+![image](https://user-images.githubusercontent.com/9017165/33017584-283b9502-cdf3-11e7-92a8-0ab6d021b93d.png)
 
 Link to test:  https://team.carto.com/u/abel/builder/b1275d91-bc38-4d49-a1b2-6b5166856021/embed
 
