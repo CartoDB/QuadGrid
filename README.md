@@ -5,7 +5,7 @@ Because of the upcoming EU law for privacy, the [GDPR](http://www.eugdpr.org/), 
 In a simplistic way, the requirement is to avoid any way to identify an individual based on the exposed data. So we need to generate `overviews` of the data where the KPIs are aggregated and the anonimity enforced. In terms of location data, the provider should also provides spatial-temporal anonymization, and this requirement is not explicitally defined by the law. Some providers are limiting the level of detail to existing administrative divisios like `census tracts` or an arbitrary sized and located grid of 0.25km² cells.
 
 As this 500m x 500m cell size can be quite far from optimal in most of the cases:
-* Urban center, shooping area: the amount of occurences in a cell this size canseveral orders higher than the threshold
+* Urban center, shooping area: the amount of occurences in a cell this size can be several orders higher than the threshold
 * Low populated country side: a cell this size might enclose so few occurences that it could identify an individual
 
 Census tracts might be better fitted to the population, but in terms of inhambitants not passers by. 
