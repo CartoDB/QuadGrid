@@ -18,7 +18,7 @@ So the idea might be an adaptative grid where the size of the cell is the minima
 
 This **QuadGrid** is the result of aplying [quadtree](https://en.wikipedia.org/wiki/Quadtree) schema with a different restriction.
 
-I stared with a plain PL/pgSQL version in order to have a debugging version of the algorithm, and then thanks to a talk with @javisantana , I move it to a recursive version that had a great impact on performance and led me to research on [index clustering](https://www.postgresql.org/docs/current/static/sql-cluster.html) that improved the performance even more
+I stared with a plain PL/pgSQL version in order to have a debugging version of the algorithm, and then thanks to a talk with [javisantana](https://github.com/javisantana) , I move it to a recursive version that had a great impact on performance and led me to research on [index clustering](https://www.postgresql.org/docs/current/static/sql-cluster.html) that improved the performance even more
 
 Performance:
 * Plain SQL (V1): below **O(N³)**
