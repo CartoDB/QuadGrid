@@ -8,7 +8,7 @@ As this 500m x 500m cell size can be quite far from optimal in most of the cases
 * Urban center, shooping area: the amount of occurences in a cell this size can be several orders higher than the threshold
 * Low populated country side: a cell this size might enclose so few occurences that it could identify an individual
 
-Census tracts might be better fitted to the population, but in terms of inhambitants not passers by. 
+Census tracts might be better fitted to the population, but in terms of inhabitants not passers by. 
 
 So the idea might be an adaptative grid where the size of the cell is the minimal one (max level of detail) that complies with the limitations (like a minimum number of events or unique individuals per cell as threshold) will provide the best resolution across the area of study being compliant with the legal restriction.
 
