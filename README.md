@@ -18,6 +18,8 @@ This **QuadGrid** is the result of aplying [quadtree](https://en.wikipedia.org/w
 
 Link to test:  https://team.carto.com/u/abel/builder/b1275d91-bc38-4d49-a1b2-6b5166856021/embed
 
+We're using the [webmercator tiling schema](https://msdn.microsoft.com/en-us/library/bb259689.aspx) so the generated cells can be easyly assimilated to common web mapping tools
+
 I stared with a plain PL/pgSQL version in order to have a debugging version of the algorithm, and then thanks to a talk with [javisantana](https://github.com/javisantana) , I move it to a recursive version that had a great impact on performance and led me to research on [index clustering](https://www.postgresql.org/docs/current/static/sql-cluster.html) that improved the performance even more
 
 Performance:
